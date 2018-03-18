@@ -101,6 +101,7 @@ def main(_):
                 allans = np.load('./data/allans.npy')
 
                 # caculate the pr curve area
+
                 average_precision = average_precision_score(allans, allprob)
                 print('PR curve area:' + str(average_precision))
 
