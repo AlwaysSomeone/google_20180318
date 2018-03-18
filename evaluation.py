@@ -14,7 +14,7 @@ def main(_):
     test_settings = network.Settings()
     #词向量大小规模
     test_settings.vocab_size = 16693
-    test_settings.num_classes = 6
+    test_settings.num_classes = 7
     test_settings.big_num = 10
     #为什么设为5561???
     #big_num = 1 时，PR curve area:0.517162123893
