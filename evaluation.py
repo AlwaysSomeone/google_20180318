@@ -64,7 +64,7 @@ def main(_):
                 mtest = network.GRU(is_training=False, word_embeddings=wordembedding, settings=test_settings)
             saver = tf.train.Saver()
 
-            testlist = [200]
+            testlist = [110,120,130,140,150,160,170,180,190,200]
             for model_iter in testlist:
                 #读取训练9000次后的模型
                 saver.restore(sess, pathname + str(model_iter))
@@ -81,8 +81,8 @@ def main(_):
                                                test_pos2[i * test_settings.big_num:(i + 1) * test_settings.big_num],
                                                test_y[i * test_settings.big_num:(i + 1) * test_settings.big_num])
                     #增加到acc列表
-                    print(type(accuracy))
-                    print(accuracy)
+                    #print(type(accuracy))
+                    #print(accuracy)
                     #big_num = 10时，输出10次<class 'list'>
                     #accuracy是形如[1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0]的输出
                     acc.append(np.mean(np.reshape(np.array(accuracy), (test_settings.big_num))))
@@ -95,7 +95,7 @@ def main(_):
                 current_step = model_iter
 
                 print(acc)
-                print(len(acc))
+                print(str(model_iter) + '次训练模型平均准确率为' + sum(acc)/len(acc))
                 print('saving all test result...')
                 np.save('./out/allprob_iter_' + str(current_step) + '.npy', allprob)
                 allans = np.load('./data/allans.npy')
