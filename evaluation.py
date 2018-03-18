@@ -102,8 +102,8 @@ def main(_):
 
                 # caculate the pr curve area
 
-                average_precision = average_precision_score(allans, allprob)
-                print('PR curve area:' + str(average_precision))
+                #average_precision = average_precision_score(allans, allprob)
+                #print('PR curve area:' + str(average_precision))
 
 if __name__ == "__main__":
 	tf.app.run()
