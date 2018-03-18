@@ -7,7 +7,7 @@ class Settings(object):
         self.vocab_size = 16691
         self.num_steps = 70
         self.num_epochs = 10
-        self.num_classes = 6
+        self.num_classes = 7
         self.gru_size = 230
         self.keep_prob = 0.5
         self.num_layers = 1
