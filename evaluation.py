@@ -95,7 +95,7 @@ def main(_):
                 current_step = model_iter
 
                 print(acc)
-                print(str(model_iter) + '次训练模型平均准确率为' + sum(acc)/len(acc))
+                print(str(model_iter) + '次训练模型平均准确率为' + str(sum(acc)/len(acc)))
                 print('saving all test result...')
                 np.save('./out/allprob_iter_' + str(current_step) + '.npy', allprob)
                 allans = np.load('./data/allans.npy')
